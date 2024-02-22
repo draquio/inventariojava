@@ -33,11 +33,17 @@ public class CategoryRestController {
         return response;
     }
 
-
     // Update category
     @PutMapping("/categories/{id}")
     public ResponseEntity<CategoryResponseRest> updateCategory(@RequestBody Category category, @PathVariable Long id){
         ResponseEntity<CategoryResponseRest> response = service.update(category,id);
+        return response;
+    }
+
+    // Delete category
+    @DeleteMapping("/categories/{id}")
+    public ResponseEntity<CategoryResponseRest> deleteCategory(@PathVariable Long id){
+        ResponseEntity<CategoryResponseRest> response = service.deleteById(id);
         return response;
     }
 }
