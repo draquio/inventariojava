@@ -40,4 +40,9 @@ public class ProductRestController {
         return productService.searchById(id);
     }
 
+    @GetMapping("/products/filter/{name}")
+    public ResponseEntity<ProductResponseRest> searchByName(@PathVariable String name){
+        return productService.searchByName(name);
+    }
+
 }
